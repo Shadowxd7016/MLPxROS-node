@@ -1,6 +1,6 @@
 # Autonomous Wall-Following Robot Brain (ROS 2 & Deep Learning)
 
-An intelligent wall-following navigation system designed for ROS 2 (Robot Operating System). The system leverages an offline-trained Multi-Layer Perceptron (MLP) Neural Network model exported as a scikit-learn Pipeline (`robot_model.pkl`) inside the submission archive `i242589_abdulrafey_A3.zip`. It consumes real-time ultrasonic distance readings, infers high-level control strategies, and converts them into precise differential drive actuation commands (`/cmd_vel`).
+An intelligent wall-following navigation system designed for ROS 2 (Robot Operating System). The system leverages an offline-trained Multi-Layer Perceptron (MLP) Neural Network model exported as a scikit-learn Pipeline (`robot_model.pkl`). It consumes real-time ultrasonic distance readings, infers high-level control strategies, and converts them into precise differential drive actuation commands (`/cmd_vel`).
 
 ---
 
@@ -39,7 +39,9 @@ The node initializes under the identifier `robot_brain_node` and operates over s
 
 ### Data Pipeline Details
 1. **Subscribed Topic**: `/ultrasonic_sensors` (`std_msgs/msg/Float32MultiArray`) receives structured float arrays corresponding to spatial distance boundaries (e.g., `front_distance`, `left_distance`).
+
 2. **Inference Loop**: Data is unpacked into a 2D matrix layout (`[[front, left, ...]]`), scaled through the pipeline, and categorized into distinct target states.
+
 3. **Published Topic**: `/cmd_vel` (`geometry_msgs/msg/Twist`) updates motor drive controllers at a 10Hz queue depth boundary.
 
 ### Action Mapping Profiles
