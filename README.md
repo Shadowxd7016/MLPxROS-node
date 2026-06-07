@@ -1,4 +1,4 @@
-# Autonomous Wall-Following Robot Brain (ROS 2 & Machine Learning)
+# Autonomous Wall-Following Robot Brain (ROS 2 & Deep Learning)
 
 An intelligent wall-following navigation system designed for ROS 2 (Robot Operating System). The system leverages an offline-trained Multi-Layer Perceptron (MLP) Neural Network model exported as a scikit-learn Pipeline (`robot_model.pkl`) inside the submission archive `i242589_abdulrafey_A3.zip`. It consumes real-time ultrasonic distance readings, infers high-level control strategies, and converts them into precise differential drive actuation commands (`/cmd_vel`).
 
